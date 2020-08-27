@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/UserDefineStyle01.css">
+        <script src="https://kit.fontawesome.com/cdf06a0d8f.js" crossorigin="anonymous"></script>
+        <title></title>
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+<!-- Brands filter list -->
+        <div class="container" id="brand-container">
+            <!-- Added by JavaScript -->
+        </div>
+      
+        <hr>
+<!-- Sticky compare button -->
+       
+        <button class="btn btn-primary toggleCompareList" id="compareSticky">COMPARE &gt;&gt;</button>
+        
+
+<!-- Products filtered by brands -->
+        <div class="container product-container" id="product-container">
+            <!-- Added by JavaScript -->
+        </div>
+
+<!-- OVERLAY PRODUCT DETAILS-->
+<div id="overlay" style="z-index: 2;" class="overlay">
+    <div class="container" id="details-container" style="background-color:rgba(255, 245, 238, 0.7); color: black;">
+      <div class="row">
+        <img src="" alt="product picture" style="margin: 0 auto;">
+      </div>
+      <div class="row">
+        <h5 style="margin: 0 auto;"></h5>
+      </div>
+      <div class="row" style="background-color:rgba(255, 245, 238, 0.8); border-radius: 15px;">
+        <div class="col-3" style="border-right:blue solid 2px;">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+            <a class="nav-link active" id="v-pills-brand-tab" data-toggle="pill" href="#v-pills-brand" role="tab">BRAND</a>
+            <a class="nav-link" id="v-pills-description-tab" data-toggle="pill" href="#v-pills-description" role="tab">DESCRIPTION</a>
+            <a class="nav-link" id="v-pills-specification-tab" data-toggle="pill" href="#v-pills-specification" role="tab">SPECIFICATION</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content" id="v-pills-tabContent" style="text-align: left;">
+            <div class="tab-pane fade show active" id="v-pills-brand" role="tabpanel"></div>
+            <div class="tab-pane fade" id="v-pills-description" role="tabpanel"></div>
+            <div class="tab-pane fade" id="v-pills-specification" role="tabpanel">
+              <p id="spec1"></p>
+              <p id="spec2"></p>
+              <p id="spec3"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 offset-8">
+          <a class="btn btn-primary" href="/PRODUCT DATA.xlsx">Download Document</a>
+          <button type="button" class="btn btn-success" style="margin-left: 20px;" id="btn-close">Close</button>
+        </div>
+      </div>
+    </div>
+ </div>
+
+ <div id="compareList">
+    
+    <div id="hidePanelIcon" class="toggleCompareList">&lt;&lt;</div>
+    <div class="compareItems flex-container-column">
+      <img class="compareItemImg" src="" alt="">
+      <span class="removeCompareItem">-</span>
+      <p class="compareItemName"></p>
+    </div>
+    <div class="compareItems flex-container-column">
+      <img class="compareItemImg" src="" alt="">
+      <span class="removeCompareItem">-</span>
+      <p class="compareItemName"></p>
+    </div>
+    <div class="compareItems flex-container-column">
+      <img class="compareItemImg" src="" alt="">
+      <span class="removeCompareItem">-</span>
+      <p class="compareItemName"></p>
+    </div>
+
+    <button class="btn btn-danger" id="compareNow" disabled="true">Compare Now</button>
+</div>
+
+<!-- OVERLAY PRODUCT COMPARISON -->
+<div id="overlay1" class="overlay">
+  <div class="container" id="compareTable">
+    <!-- images -->
+    <div class="row"> 
+      <div class="col-3">Comparison table</div>
+      <div class="col-3"><img class="compareItemImg" src="" alt=""></div>
+      <div class="col-3"><img class="compareItemImg" src="" alt=""></div>
+      <div class="col-3"><img class="compareItemImg" src="" alt=""></div>
+    </div>
+
+    <!-- product name -->
+    <div class="row">
+      <div class="col-3"><p>Product Name:</p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+    </div>
+
+    <!-- product brand -->
+    <div class="row">
+      <div class="col-3"><p>The Brand:</p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+    </div>
+
+    <!-- product specification 1 -->
+    <div class="row">
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+    </div>
+
+    <!-- product specification 2 -->
+    <div class="row">
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+    </div>
+
+    <!-- product specification 3 -->
+    <div class="row">
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+      <div class="col-3"><p></p></div>
+    </div>
+
+    <!-- close overlay -->
+    <div class="row">
+      <div class="col-4 offset-8">
+        <a class="btn btn-primary" href="/PRODUCT DATA.xlsx">Download Document</a>
+        <button type="button" class="btn btn-success" style="margin-left: 20px;" id="btn-close-compare">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Begin footer-->
+<footer class="page-footer font-small pt-4 mt-4" style="background-color:#DCDCDC">
+  <div class="container-fluid" id="footer" style="font-weight: bold; z-index: -100; color: #1C1C1C !important;margin-top: 50px">
+    <div class="row">
+        <div class="col-lg-4">
+          <p style="font-size:30px;">CONTACT US</p>  
+          <p><i class="fa fa-mobile" style="font-size:30px;"></i> | <span style="font-size:16px;">(+84) 0981150149</span></p>
+          <p><i class="fa fa-mobile" style="font-size:30px;"></i> | <span style="font-size:16px;">(+84) 0932067939</span></p>
+          <p><i class="fa fa-envelope" style="font-size:30px;"></i> | <a href="mailto:phucsinnet113@gmail.com">phucsinnet113@gmail.com</a></p>
+        </div>
+        <div class="col-lg-4" style="color:#1C1C1C; font-size: 15px">
+              <p style="font-size: 20px;">ONLINE TIME</p>
+              <p>MONDAYS | 8:00 - 23:00</p>  
+              <p>TUE - FRI | 8:00 - 23:00</p>
+        </div>
+        <div class="col-lg-4">
+            <p style="font-size:30px;">LOCATION</p>
+            <iframe class="img-responsive img-thumbnail" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.6626580958668!2d106.66520265820785!3d10.786376998078707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed23c80767d%3A0x5a981a5efee9fd7d!2zNTkwIEPDoWNoIE3huqFuZyBUaMOhbmcgOCwgcGjGsOG7nW5nIDExLCBUw6JuIELDrG5oLCBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1520391560324"
+                width="100%" height="150px" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <p style="font-size:20px;"><i class="fa fa-map-marker"></i> 590 Cach Mang Thang 08, District 10, HCMC, Vietnam.</p>
+        </div>
+    </div>
+  </div>
+  <hr>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-4" style="font-size:16px; text-align: center;">
+            <span style=" font-weight:bold">FOLLOW US</span>  
+          </div>
+          <div class="col-sm-8"  style="font-size:16px; text-align: center;">
+            <a class="btn btn-info social-icon-fa" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+            <a class="btn btn-info social-icon-ins" href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram"></i></a>
+            <a class="btn btn-info social-icon-youtube" href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+            <a class="btn btn-info social-icon-twitter" href="https://twitter.com/?lang=en"><i class="fa fa-twitter"></i></a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col" style="text-align: center;">
+          <a class="text-center" href="#" style="font-size:20px; font-weight:normal; color:#1C1C1C;"><span class="center-block">WILSON SPORTING GOODS</span></a>
+          <H5 class="text-center" style="color:#1C1C1C"><span class="center-block">Privacy policy</span></H5>
+          <H5 class="text-center" style="color:#1C1C1C"><span class="center-block">Term & Conditions</span></H5>
+        </div>
+      </div>
+      <div class="row" style="text-align: center;">
+        <div class="col"> &copy; 2020 Copyright: <a href="index.html"> Wilson Sporting Goods </a></div>
+      </div>
+    </div>
+</footer>
+<!--End footer-->
+
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/productsJSON.js"></script> <!-- Contain products data and its manipulation -->
+    <script>
+        //Get product type via web storage
+        var pdType = sessionStorage.getItem('pdType');
+        
+        //Create a deck of brand checkbok
+        function addBrand($brandDeck,pdBrand){
+            var $brandDiv = $('<div class="col flex-container brandDiv"></div>');
+            var $checkbox = $('<input type="checkbox" id="" value="" class="brandChoice">');
+            var $label = $('<label for=""></label>');
+            var $labelImg = $('<img src="" class="brandImg brandChoice" alt="">');
+            $label.append($labelImg);
+            $brandDiv.append($checkbox).append($label);
+            $checkbox.attr('id',pdBrand).attr('value',pdBrand);
+            $label.attr('for',pdBrand);
+            $labelImg.attr('src','images/brands/' + pdBrand + '.png').attr('alt',pdBrand);
+            $brandDeck.append($brandDiv);
+        }
+
+        //loop through brand JSON data, pick them into a Deck if match relevant product type
+        function fetchBrands(pdType){
+            $brandDeck = $('<div class="row row-cols-2 row-cols-sm-4 row-cols-md-6 row-cols-lg-8 row-cols-xl-10"></div>');
+            for(var x in brands){
+                if(brands[x].TYPE == pdType) 
+                    for(var y in brands[x].BRAND){
+                        addBrand($brandDeck,brands[x].BRAND[y]);
+                    }
+            }
+            $('#brand-container').append($brandDeck);
+        }
+
+        fetchBrands(pdType);
+        fetchProducts(null,pdType,[null],null,'product-container');
+
+        //Fiter product by brand, event click on brands checkbox
+        $('.brandChoice').on('click',function(){
+            $('div.card').hide();
+            $('.brandChoice:checked').each(function(){
+                $('div.' + $(this).val()).show();
+            });
+        });
+
+        //Set compare list items
+        var compareListItems = [];
+        var idListItems = [];
+
+        //Active compareTag
+        $('.product-container').on('click','.compareTag',function(){
+          
+          //active compareList panel
+          if($('#compareList').hasClass('active') == false){
+                $('.toggleCompareList').click();
+          }
+          
+          
+          if(compareListItems.length == 3 && $(this).hasClass('compareTagActive') == false){
+            window.alert('Maximum 3 items in compare list.');
+
+          } else if($(this).hasClass('compareTagActive') == false){
+              $(this).addClass('compareTagActive').addClass($(this).prev().children('p')[6].textContent);
+              
+              
+              idListItems.push(getCompareItem($(this))[0]);
+              $(this).addClass(getCompareItem($(this))[1]);
+              compareListItems.push(getCompareItem($(this)));
+              
+              //load comparelist
+              loadCompareList(compareListItems);
+
+            } else if($(this).hasClass('compareTagActive') == true){
+                $(this).removeClass('compareTagActive');
+                
+                //dismiss the item
+                var index = idListItems.indexOf(getCompareItem($(this))[0]);
+                compareListItems.splice(index,1);
+                idListItems.splice(index,1);
+                loadCompareList(compareListItems);
+                $(this).removeClass(getCompareItem($(this))[1]);
+          }
+
+          allowCompareNow(compareListItems); //enable the compareNow button
+        });
+
+        //get infomation of compare item
+        function getCompareItem($thisElement){
+              var compareItemImg = $thisElement.prev().children('p')[0].textContent;              
+              var compareItemName = $thisElement.prev().children('p')[6].textContent;                
+              var compareItemBrand = $thisElement.prev().children('p')[1].textContent;                
+              var compareItemSpec1 = $thisElement.prev().children('p')[3].textContent;              
+              var compareItemSpec2 = $thisElement.prev().children('p')[4].textContent;              
+              var compareItemSpec3 = $thisElement.prev().children('p')[5].textContent;              
+              return [compareItemImg,compareItemName,compareItemBrand,compareItemSpec1,compareItemSpec2,compareItemSpec3];
+        }
+
+        function loadCompareList(compareListItems){
+          compareItems = document.getElementsByClassName('compareItems');
+          //clear list
+          for(let item of compareItems){
+            item.firstElementChild.setAttribute('src','');
+            item.lastElementChild.textContent = '';
+          }
+          // reload list
+          for(var x in compareListItems){
+            compareItems[x].firstElementChild.setAttribute('src',compareListItems[x][0]);
+            compareItems[x].lastElementChild.textContent = compareListItems[x][1];
+          }
+        }
+
+        //allow compareNow
+        function allowCompareNow(compareListItems){
+          if(compareListItems.length > 1){
+            document.getElementById('compareNow').disabled = false;
+          } else {
+            document.getElementById('compareNow').disabled = true;
+          }
+        }
+
+        $('#compareList').on('click','.removeCompareItem',function(){
+          var bindingTag = document.getElementsByClassName($(this).next().text());
+          //console.log(bindingTag[0]);
+          if(bindingTag[0] == undefined) return false;
+          bindingTag[0].click();
+        });
+
+        //Slide compareList
+        $('.toggleCompareList').click(function(){
+            if($('#compareList').css('width') == 0 + 'px'){
+                $('#compareList').css('width', 200 + 'px');
+                $('#compareList').addClass('active');
+                $('#compareList *').show(400);
+            }
+            else {
+                $('#compareList *').hide();
+                $('#compareList').css('width', 0 + 'px');
+                $('#compareList').removeClass('active');
+                
+            }
+        });
+
+        $('#compareNow').click(function(){
+          loadCompareTable(compareListItems);
+          $('#overlay1').show(300);
+        });
+
+        $('#btn-close-compare').click(function(){
+          $('#overlay1').hide(300);
+        });
+
+        function loadCompareTable(compareListItems){
+          //clear table
+          for(let i = 1; i <= 3; i++){
+            $('#compareTable .row')[0].children[i].firstChild.setAttribute('src','');
+          }
+          for(let x = 1; x <= 5; x++){
+            for(let y = 1; y <= 3; y++){
+              $('#compareTable .row')[x].children[y].firstChild.textContent = '';
+            }
+          }
+
+          //reload Table
+          //pickup specification title
+          for(let z = 3; z <= 5; z++){
+            $('#compareTable .row')[z].children[0].firstChild.textContent = compareListItems[0][z].slice(0,compareListItems[0][z].indexOf(':'));
+          }
+          //pickup images
+          for(let i = 1; i <= compareListItems.length; i++){
+            $('#compareTable .row')[0].children[i].firstChild.setAttribute('src',compareListItems[i-1][0]);
+          }
+          //pickup details
+          for(let x = 1; x <= 5; x++){
+            for(let y = 1; y <= compareListItems.length; y++){
+              $('#compareTable .row')[x].children[y].firstChild.textContent = compareListItems[y-1][x];
+            }
+          }
+        }
+
+    </script>
+    <script src="js/overlay.js"></script>
+  </body>
+</html>

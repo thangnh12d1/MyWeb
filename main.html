@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/UserDefineStyle01.css">
+        <script src="https://kit.fontawesome.com/cdf06a0d8f.js" crossorigin="anonymous"></script>
+        
+        <title></title>
+        <style></style>
+    </head>
+
+    <body>
+<!-- Advertising Banner -->
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" style="height: 280px;">
+                <div class="carousel-item active" data-interval="4000">
+                  <img src="images/carousel01.jpg" class="d-block imgbanner1" alt="carousel picture 1">
+                </div>
+                <div class="carousel-item" data-interval="4000">
+                  <img src="images/carousel02.jpg" class="d-block imgbanner1" alt="carousel picture 2">
+                </div>
+                <div class="carousel-item" data-interval="4000">
+                  <img src="images/carousel03.jpg" class="d-block imgbanner1" alt="carousel picture 3">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-4">
+              <div class="row" style="height: 140px;"><img src="images/banner01.jpg" alt="banner01" class="imgbanner2"></div>
+              <div class="row" style="height: 140px;"><img src="images/banner02.jpg" alt="banner02" class="imgbanner2"></div>
+          </div>
+        </div>
+        <div class="row" style="height: 240px;"><img src="images/82_banner.jpg" alt="banner03" class="imgbanner3"></div>
+      </div>
+      
+<!-- BasketBall highlight list -->
+      <div class="container product-container" id="BASKETBALL">
+        <div class="row">
+          <h4>BASKETBALL HIGHLIGHT LIST</h4>
+        </div>
+        <!-- Products loaded by Javascript -->
+      </div>
+
+<!-- Football highlight list -->
+      <div class="container product-container" id="FOOTBALL">
+        <div class="row">
+          <h4>FOOTBALL HIGHLIGHT LIST</h4>
+        </div>
+        <!-- Products loaded by Javascript -->
+      </div>
+
+<!-- Badminton highlight list -->
+      <div class="container product-container" id="BADMINTON">
+        <div class="row">
+          <h4>BADMINTON HIGHLIGHT LIST</h4>
+        </div>
+        <!-- Products loaded by Javascript -->
+      </div>
+
+<!-- OVERLAY PRODUCT DETAILS -->
+<div id="overlay" class="overlay">
+  <div class="container" id="details-container" style="background-color:rgba(255, 245, 238, 0.7); color: black;">
+    <div class="row">
+      <img src="" alt="product picture" style="margin: 0 auto;">
+    </div>
+    <div class="row">
+      <h5 style="margin: 0 auto;"></h5>
+    </div>
+    <div class="row" style="background-color:rgba(255, 245, 238, 0.8); border-radius: 15px;">
+      <div class="col-3" style="border-right:blue solid 2px;">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+          <a class="nav-link active" id="v-pills-brand-tab" data-toggle="pill" href="#v-pills-brand" role="tab">BRAND</a>
+          <a class="nav-link" id="v-pills-description-tab" data-toggle="pill" href="#v-pills-description" role="tab">DESCRIPTION</a>
+          <a class="nav-link" id="v-pills-specification-tab" data-toggle="pill" href="#v-pills-specification" role="tab">SPECIFICATION</a>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent" style="text-align: left;">
+          <div class="tab-pane fade show active" id="v-pills-brand" role="tabpanel"></div>
+          <div class="tab-pane fade" id="v-pills-description" role="tabpanel"></div>
+          <div class="tab-pane fade" id="v-pills-specification" role="tabpanel">
+            <p id="spec1"></p>
+            <p id="spec2"></p>
+            <p id="spec3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 offset-8">
+        <a class="btn btn-primary" href="/PRODUCT DATA.xlsx">Download Document</a>
+        <button type="button" class="btn btn-success" style="margin-left: 20px;" id="btn-close">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Begin footer-->
+  <footer class="page-footer font-small pt-4 mt-4" style="background-color:#DCDCDC">
+      <div class="container-fluid" id="footer" style="font-weight: bold; z-index: -100; color: #1C1C1C !important;margin-top: 50px">
+        <div class="row">
+            <div class="col-lg-4">
+              <p style="font-size:30px;">CONTACT US</p>  
+              <p><i class="fa fa-mobile" style="font-size:30px;"></i> | <span style="font-size:16px;">(+84) 0981150149</span></p>
+              <p><i class="fa fa-mobile" style="font-size:30px;"></i> | <span style="font-size:16px;">(+84) 0932067939</span></p>
+              <p><i class="fa fa-envelope" style="font-size:30px;"></i> | <a href="mailto:phucsinnet113@gmail.com">phucsinnet113@gmail.com</a></p>
+            </div>
+            <div class="col-lg-4" style="color:#1C1C1C; font-size: 15px">
+                  <p style="font-size: 20px;">ONLINE TIME</p>
+                  <p>MONDAYS | 8:00 - 23:00</p>  
+                  <p>TUE - FRI | 8:00 - 23:00</p>
+            </div>
+            <div class="col-lg-4">
+                <p style="font-size:30px;">LOCATION</p>
+                <iframe class="img-responsive img-thumbnail" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.6626580958668!2d106.66520265820785!3d10.786376998078707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed23c80767d%3A0x5a981a5efee9fd7d!2zNTkwIEPDoWNoIE3huqFuZyBUaMOhbmcgOCwgcGjGsOG7nW5nIDExLCBUw6JuIELDrG5oLCBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1520391560324"
+                    width="100%" height="150px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <p style="font-size:20px;"><i class="fa fa-map-marker"></i> 590 Cach Mang Thang 08, District 10, HCMC, Vietnam.</p>
+            </div>
+        </div>
+      </div>
+      <hr>
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-4" style="font-size:16px; text-align: center;">
+                <span style=" font-weight:bold">FOLLOW US</span>  
+              </div>
+              <div class="col-sm-8"  style="font-size:16px; text-align: center;">
+                <a class="btn btn-info social-icon-fa" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a class="btn btn-info social-icon-ins" href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram"></i></a>
+                <a class="btn btn-info social-icon-youtube" href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                <a class="btn btn-info social-icon-twitter" href="https://twitter.com/?lang=en"><i class="fa fa-twitter"></i></a>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col" style="text-align: center;">
+              <a class="text-center" href="#" style="font-size:20px; font-weight:normal; color:#1C1C1C;"><span class="center-block">WILSON SPORTING GOODS</span></a>
+              <H5 class="text-center" style="color:#1C1C1C"><span class="center-block">Privacy policy</span></H5>
+              <H5 class="text-center" style="color:#1C1C1C"><span class="center-block">Term & Conditions</span></H5>
+            </div>
+          </div>
+          <div class="row" style="text-align: center;">
+            <div class="col"> &copy; 2020 Copyright: <a href="index.html"> Wilson Sporting Goods </a></div>
+          </div>
+        </div>
+  </footer>
+<!--End footer-->
+
+      <script src="js/jquery-3.5.1.js"></script>
+      <script src="js/bootstrap.bundle.js"></script>
+      <script src="js/productsJSON.js"></script> <!-- Contain products data and its manipulation -->
+      <script>
+        fetchProducts('BASKETBALL',null,[null],true,'BASKETBALL');
+        fetchProducts('FOOTBALL',null,[null],true,'FOOTBALL');
+        fetchProducts('BADMINTON',null,[null],true,'BADMINTON');
+        //console.log(window.location.pathname)
+        
+      </script>
+      <script src="js/overlay.js"></script>
+    </body>
+</html>

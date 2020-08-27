@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/UserDefineStyle01.css">
+        <script src="https://kit.fontawesome.com/cdf06a0d8f.js" crossorigin="anonymous"></script>
+        
+        <title>Wilson Sporting Goods</title>
+        <link rel="shortcut icon" href="images/favicon.ico"/>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid" style="background-color: #d0142c;">
+                <div class="row">
+                    <div class="col-xl-8 col-md-6">
+                        <a href="#"><img src="images/wilson_logo.jpg" alt="logo" class="logo" height="50px"></a>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <form class="form-inline" style="margin-top: 7px;">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="button"><i class="fas fa-search"></i></button>
+                            </div>
+                            <button class="btn btn-secondary" type="button" style="margin-left: 10px;">Cart <i class="fas fa-shopping-cart"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+      
+        <nav class="navbar bg-dark navbar-expand-lg">
+            <button class="navbar-toggler btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <i class="fas fa-sliders-h"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-baseball-ball"></i> BASKETBALL</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Basketballs</a>
+                                <a class="dropdown-item" href="#">T-Shirt</a>
+                            </div>
+                        </div>
+                        
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-futbol"></i> FOOTBALL</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Soccer Balls</a>
+                                <a class="dropdown-item" href="#">Shoes</a>
+                            </div>
+                        </div>
+        
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><img src="images/badminton-icon-2.png" alt="batminton-icon" width="20"> BADMINTON</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Rackets</a>
+                                <a class="dropdown-item" href="#">Shuttlecocks</a>
+                            </div>
+                        </div>
+        
+                        <a class="nav-link btn btn-secondary" href="#" id="aboutus">ABOUT US</a>
+                        <a class="nav-link btn btn-secondary" href="#" id="contactus">CONTACT US</a>
+                        <span class="nav-link">
+                            <a href="#" id="signin">SIGN IN | </a>
+                            <a href="#">FIND DEALER <i class="fas fa-map-marked-alt"></i></a>
+                        </span>
+
+                </div>
+            </div>
+        </nav>
+       
+  
+        <iframe src="main.html" frameborder="0" scrolling="no" width="100%" height="3000px" title="Main Page for frame" id="mainFrame"
+                onload="this.style.height = (this.contentWindow.document.body.scrollHeight + 20) + 'px';"></iframe>
+     
+        <!-- onload="this.style.height = (this.contentWindow.document.body.scrollHeight + 20) + 'px';" -->
+        <div id="cartFix"><i class="fas fa-shopping-cart"></i></div>
+
+        <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/bootstrap.bundle.js"></script>
+        <script src="js/productsJSON.js"></script>
+        <script>        
+        
+//Navigation Event Click to load pages in the iframe (Requested by eProject).
+            $('.dropdown-item').click(function(event){
+                event.preventDefault();
+                $('iframe').attr('src','product.html');
+                sessionStorage.setItem('pdType',$(this).text());
+                $('iframe').load();
+            });
+
+            $('#contactus').click(function(event){
+                event.preventDefault();
+                $('iframe').attr('src','contact.html');
+            });
+
+            $('#aboutus').click(function(event){
+                event.preventDefault();
+                $('iframe').attr('src','aboutus.html');
+            });
+
+            $('#signin').click(function(event){
+                event.preventDefault();
+                $('iframe').attr('src','signin.html');
+            });
+
+            $('.logo').click(function(event){
+                event.preventDefault();
+                $('iframe').attr('src','main.html');
+            });
+
+        </script>
+             
+    </body>
+</html>

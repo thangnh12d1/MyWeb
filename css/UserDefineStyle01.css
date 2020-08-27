@@ -1,0 +1,231 @@
+body{
+    background-image: url('../images/y-so-serious.png');
+    color: tomato ;
+  }
+/* [class^="col"]{
+      border:tomato dashed 1px;
+  }
+[class^="row"]{
+      border:deepskyblue dashed 1px;
+  } */
+hr{
+    border-top: white solid 1px;
+}
+.overlay{
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+    z-index: 2;
+}
+#overlay img{
+    width: 300px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-container-column{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+}
+.brandImg{
+    width: 100%;
+    margin-left: 10px;
+}
+.txtHide{
+    display: none;
+}
+
+#details-container{
+    position: relative;
+    margin: 0 auto;
+}
+
+#details-container .row{
+    margin-bottom: 10px;
+}
+
+.product-container{
+    margin-top: 20px;
+}
+
+.cardButtons{
+    padding-bottom: 15px;
+}
+
+#cartFix{
+    background-color: seashell;
+    position: fixed;
+    width: 60px;
+    height:60px;
+    bottom: 10%;
+    right: 5px;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 30px;
+}
+
+
+#cartFix:hover, #hidePanelIcon:hover, .compareTag:hover,.removeCompareItem:hover, .brandChoice{
+    cursor: pointer;
+}
+
+#compareList{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease-out;
+    z-index: 1;
+    padding-top: 50px;
+}
+#compareList *{
+    display: none;
+}
+
+#hidePanelIcon{
+    background-color: navy;
+    position: absolute;
+    top: 10px;
+    left: 180px;
+    padding: 4px;
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.compareItems{
+    width: 160px;
+    height: 160px;
+    background-image: url('/images/plus.png');
+    background-repeat: round;
+    margin: 30px 20px;
+    position: relative;
+}
+.compareItemImg{
+    width: 120px;
+    height: 120px;
+    margin-left: 20px;
+  }
+
+.removeCompareItem{
+    background-color: crimson;
+    width: 25px;
+    height: 25px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-radius: 50%;
+    position: absolute;
+    right: -12px;
+    top:-12px;
+}
+.compareItemName{
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+#compareNow{
+    margin-left: 30px;
+}
+
+.compareTag{
+    background-color: #777;
+    color: white;
+    font-weight: bold;
+    width: 130px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 5px;
+    border-radius: 0 0 0 10px;
+}
+
+
+.compareTag:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    float: right;
+  }
+  
+  .compareTagActive:after {
+    content: '\2212';
+    color: lightgreen;
+  }
+  .compareTagActive{
+      color: lightgreen;
+  }
+
+  #compareSticky{
+      position: sticky;
+      top: 0;
+  }
+
+  #compareTable .row{
+      text-align: center;
+      background-color: silver;
+      border: firebrick 1px solid;
+      color: black;
+  }
+
+  #overlay1{
+      padding-top: 200px;
+  }
+  .navbar-nav .nav-link{
+      margin-right: 20px;
+      color: white;
+  }
+  .nav-link>a{
+    color: white;
+    text-decoration: none;
+  }
+ .nav-link:hover, .nav-link>a:hover{
+      color: chartreuse;
+  }
+.imgbanner1{
+    width: 100%;
+    height: 280px;
+}
+
+.imgbanner2{
+    width: 100%;
+    height: 140px;
+}
+
+.imgbanner3{
+    width: 100%;
+    height: 240px;
+}
+
+.card-title{
+    color: maroon;
+}
+
+.pdBrief{
+    color: black;
+}
+
+.brandDiv{
+    border: white solid 1px;
+}
